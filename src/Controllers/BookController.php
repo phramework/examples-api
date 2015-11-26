@@ -18,9 +18,7 @@
 namespace Phramework\Examples\API\Controllers;
 
 use \Phramework\Phramework;
-use \Phramework\Validate\Validate;
 use \Phramework\Models\Request;
-use \Phramework\Models\Util;
 use \Phramework\Examples\API\Models\Book;
 
 /**
@@ -51,11 +49,11 @@ class BookController extends \Phramework\Examples\API\Controller
 
     public static function POST($params, $method, $headers)
     {
-        $validationModel = new \Phramework\Validate\Object(
+        $validationModel = new \Phramework\Validate\ObjectValidator(
             [
-                'title'   =>  new \Phramework\Validate\String(3, 32),
-                'content' =>  new \Phramework\Validate\String(3, 1024),
-                'category'=> (new \Phramework\Validate\Enum(
+                'title'   =>  new \Phramework\Validate\StringValidator(3, 32),
+                'content' =>  new \Phramework\Validate\StringValidator(3, 1024),
+                'category'=> (new \Phramework\Validate\EnumValidator(
                     ['blog', 'release', 'test']
                 ))->setDefault('blog')
             ],
