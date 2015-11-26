@@ -1,0 +1,23 @@
+{
+  "meta": {
+    "order": -3
+  },
+  "request": {
+    "url": "book/",
+    "method": "GET",
+    "headers": [
+      "$$headerRequestAccept$",
+      "$$headerRequestContentType$"
+    ]
+  },
+  "response": {
+    "statusCode": 200,
+    "headers": {
+      "Content-Type": "$$headerResponseContentType$"
+    },
+    "ruleObjects": [],
+    "export": {
+      "book_id": "data.id"
+    }
+  }
+}

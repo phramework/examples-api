@@ -51,6 +51,32 @@ class BookController extends \Phramework\Examples\API\Controller
 
     public static function POST($params, $method, $headers)
     {
-        throw new \Phramework\Exceptions\NotImplemented();
+        $validationModel = new \Phramework\Validate\Object(
+            [
+                'title'   =>  new \Phramework\Validate\String(3, 32),
+                'content' =>  new \Phramework\Validate\String(3, 1024),
+                'category'=> (new \Phramework\Validate\Enum(
+                    ['blog', 'release', 'test']
+                ))->setDefault('blog')
+            ],
+            ['title', 'content']
+        );
+
+        $data = $validationModel->parse($params);
+
+        //Do something with parsed data
+        //$data->title
+        //$data-content
+        //$data->category
+
+        //Return 202 Accepted HTTP status code, since we din't store the data
+        \Phramework\Models\Response::accepted();
+
+        /*
+        //Uncomment to view the data object when debugging
+        self::view([
+            'data' => $data
+        ]);
+        */
     }
 }

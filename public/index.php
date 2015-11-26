@@ -39,7 +39,7 @@ $APP = function () {
     $URIStrategy = new \Phramework\URIStrategy\URITemplate([
         ['book/', NS . 'BookController', 'GET', Phramework::METHOD_GET],
         ['book/{id}', NS . 'BookController', 'GETSingle', Phramework::METHOD_GET],
-        ['book/', NS . 'BookController', 'POST', Phramework::METHOD_ANY]
+        ['book/', NS . 'BookController', 'POST', Phramework::METHOD_POST]
     ]);
 
     //Initialize API

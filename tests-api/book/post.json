@@ -1,0 +1,22 @@
+{
+  "meta": {
+    "order": -2,
+    "JSONbody": false
+  },
+  "request": {
+    "url": "book/",
+    "method": "POST",
+    "headers": [
+      "$$headerRequestAccept$",
+      "Content-Type: application/json"
+    ],
+    "body": {
+      "title": "My title",
+      "content": "Lorem ipsum..."
+    }
+  },
+  "response": {
+    "statusCode": 202,
+    "headers": {}
+  }
+}

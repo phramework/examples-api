@@ -2,7 +2,7 @@
 
 $settings = [
     'debug' => true,
-    'api_base' => 'http://localhost:8000/'
+    'base' => 'http://localhost:8000/'
 ];
 
 if (file_exists(__DIR__ .'/localsettings.php')) {
