@@ -36,6 +36,6 @@
       "testphase -i -d ./tests-api/ -b ./tests-api/bootstrap.php"
     ],
     "lint": "phpcs -p -s --standard=PSR2 ./src",
-    "run": "(cd public; echo \"\nStarting web server at http://localhost:8000 ...\n\"; php -S localhost:8000)"
+    "run": "(cd public; echo \"\nStarting web server at http://localhost:8000 ...\n\"; php -S localhost:8000 &)"
   }
 }
