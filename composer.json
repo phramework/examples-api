@@ -1,9 +1,11 @@
 {
   "name": "phramework/examples-api",
   "description": "Simple API example using phramework",
+  "license": "Apache-2.0",
   "homepage": "https://phramework.github.io/",
+  "type": "project",
   "authors": [{
-    "name": "Xenophon Spafaridis",
+    "name": "Xenofon Spafaridis",
     "email": "nohponex@gmail.com",
     "homepage": "https://nohponex.gr"
   }],
@@ -14,7 +16,7 @@
   },
   "require": {
     "php": ">=5.6",
-    "phramework/phramework": "dev-master"
+    "phramework/phramework": "^1.0.0"
   },
   "require-dev": {
     "phpunit/phpunit": "5.*",

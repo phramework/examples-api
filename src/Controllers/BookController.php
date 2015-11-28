@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2015 Spafaridis Xenofon
+ * Copyright 2015 Xenofon Spafaridis
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ use \Phramework\Examples\API\Models\Book;
 
 /**
  * @license https://www.apache.org/licenses/LICENSE-2.0 Apache-2.0
- * @author Spafaridis Xenofon <nohponex@gmail.com>
+ * @author Xenofon Spafaridis <nohponex@gmail.com>
  */
 class BookController extends \Phramework\Examples\API\Controller
 {
