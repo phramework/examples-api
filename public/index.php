@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2015 Xenofon Spafaridis
+ * Copyright 2015 Xenofon Spafaridis.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,12 +20,13 @@ error_reporting(E_ALL);
 ini_set('display_errors', '1');
 
 //This autoload path is for loading current version of phramework
-require __DIR__ . '/../vendor/autoload.php';
+require __DIR__.'/../vendor/autoload.php';
 
 //define controller namespace, as shortcut
 define('NS', '\\Phramework\\Examples\\API\\Controllers\\');
 
 use \Phramework\Phramework;
+use \Phramework\SystemLog\SystemLog;
 
 /**
  * @package examples/post
@@ -34,16 +35,20 @@ use \Phramework\Phramework;
 $APP = function () {
 
     //Include settings
-    $settings = include __DIR__ . '/../settings.php';
+    $settings = include __DIR__.'/../settings.php';
 
     $URIStrategy = new \Phramework\URIStrategy\URITemplate([
-        ['book/', NS . 'BookController', 'GET', Phramework::METHOD_GET],
-        ['book/{id}', NS . 'BookController', 'GETSingle', Phramework::METHOD_GET],
-        ['book/', NS . 'BookController', 'POST', Phramework::METHOD_POST]
+        ['book/', NS.'BookController', 'GET', Phramework::METHOD_GET],
+        ['book/{id}', NS.'BookController', 'GETSingle', Phramework::METHOD_GET],
+        ['book/', NS.'BookController', 'POST', Phramework::METHOD_POST],
     ]);
 
     //Initialize API
     $phramework = new Phramework($settings, $URIStrategy);
+
+    //Initialize and register system-log
+    $systemLog = new SystemLog($settings['system-log']);
+    $systemLog->register();
 
     unset($settings);
 
